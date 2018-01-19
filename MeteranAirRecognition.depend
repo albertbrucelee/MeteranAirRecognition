@@ -1,0 +1,44 @@
+# depslib dependency file v1.0
+1516388230 source:/media/albertbrucelee/A0A84628A845FD72/Users/Albert Brucelee/Google Drive/Kuliah/Ekstensi/Semester 3/Pengantar Pengolahan Citra Digital/Project/MeteranAirRecognition/main.cpp
+	<opencv2/core/core.hpp>
+	<opencv2/imgproc/imgproc.hpp>
+	<opencv2/highgui/highgui.hpp>
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+	"blokAngkaExtraction.h"
+	"angkaExtraction.h"
+	"angkaRecognition.h"
+
+1516387354 /media/albertbrucelee/A0A84628A845FD72/Users/Albert Brucelee/Google Drive/Kuliah/Ekstensi/Semester 3/Pengantar Pengolahan Citra Digital/Project/MeteranAirRecognition/blokAngkaExtraction.h
+	<opencv2/core/core.hpp>
+	<opencv2/imgproc/imgproc.hpp>
+	<opencv2/highgui/highgui.hpp>
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+
+1516388442 /media/albertbrucelee/A0A84628A845FD72/Users/Albert Brucelee/Google Drive/Kuliah/Ekstensi/Semester 3/Pengantar Pengolahan Citra Digital/Project/MeteranAirRecognition/angkaExtraction.h
+	<opencv2/core/core.hpp>
+	<opencv2/imgproc/imgproc.hpp>
+	<opencv2/highgui/highgui.hpp>
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+
+1516386980 /media/albertbrucelee/A0A84628A845FD72/Users/Albert Brucelee/Google Drive/Kuliah/Ekstensi/Semester 3/Pengantar Pengolahan Citra Digital/Project/MeteranAirRecognition/angkaRecognition.h
+	<opencv2/core/core.hpp>
+	<opencv2/imgproc/imgproc.hpp>
+	<opencv2/highgui/highgui.hpp>
+	<iostream>
+	<stdio.h>
+	<stdlib.h>
+	"svm.h"
+
+1516386949 /media/albertbrucelee/A0A84628A845FD72/Users/Albert Brucelee/Google Drive/Kuliah/Ekstensi/Semester 3/Pengantar Pengolahan Citra Digital/Project/MeteranAirRecognition/svm.h
+	<iostream>
+	<opencv2/highgui.hpp>
+	<opencv2/imgproc.hpp>
+	"opencv2/objdetect.hpp"
+	<opencv2/ml.hpp>
+
