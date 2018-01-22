@@ -150,34 +150,40 @@ void blokAngkaExtraction_featureExtraction() {
     /// so we remap the original image with that corner and also make the image to be top view perspective:
     warpPerspective(src, imageBlokAngkaExtracted, getPerspectiveTransform(interestImage_points_src, interestImage_points_dst), Size(maxLengthX, maxLengthY), INTER_LINEAR, BORDER_CONSTANT, CV_RGB(255,255,255));
     imshow( TITLE_BLOK_ANGKA_FEATURE_EXTRACTION_RESULT, imageBlokAngkaExtracted );
-    imwrite( LOCATION_SAVED+TITLE_BLOK_ANGKA_FEATURE_EXTRACTION_RESULT+TYPE_SAVED, threshold_result );
+    imwrite( LOCATION_SAVED+TITLE_BLOK_ANGKA_FEATURE_EXTRACTION_RESULT+TYPE_SAVED, imageBlokAngkaExtracted );
 
 }
 
 
 ///draw contours only for visualisation
 void drawContours(vector<vector<Point>>contours, vector<RotatedRect> rect, String windowName, Size windowSize) {
-    Mat window = Mat::zeros( windowSize, CV_8UC3 );
+    Mat window  = Mat::zeros( windowSize, CV_8UC3 );
+    Mat windowContour = Mat::zeros( windowSize, CV_8UC3 );
+    Mat windowRect = Mat::zeros( windowSize, CV_8UC3 );
 
     for( int i = 0; i< contours.size(); i++ )
     {
         Scalar color = Scalar( rng.uniform(0, 255), rng.uniform(0,255), rng.uniform(0,255) );
         // contour
-        drawContours( window, contours, i, color, 1, 8, vector<Vec4i>(), 0, Point() );
+        drawContours( windowContour, contours, i, color, 1, 8, vector<Vec4i>(), 0, Point() );
 
         // rotated rectangle
         Point2f rect_points[4]; rect[i].points( rect_points );
         for( int j = 0; j < 4; j++ ) {
             //cout << rect_points[j] <<endl;
-            line( window, rect_points[j], rect_points[(j+1)%4], color, 1, 8 );
+            line( windowRect, rect_points[j], rect_points[(j+1)%4], color, 1, 8 );
         }
     }
-
+    window = windowContour+windowRect;
     /// Show in a window
     namedWindow( windowName, CV_WINDOW_AUTOSIZE );
     imshow( windowName, window );
     imwrite( LOCATION_SAVED+windowName+TYPE_SAVED, window );
+
+    imwrite( LOCATION_SAVED+windowName+"_contour"+TYPE_SAVED, windowContour );
+    imwrite( LOCATION_SAVED+windowName+"_contour_rect"+TYPE_SAVED, windowRect );
 }
+
 
 
 /// get the interest object (angka meteran air)
@@ -286,18 +292,25 @@ void getDstPoint(Point2f *interestImage_point_dst, Size sizeInterestImage) {
 
 void drawInterest(vector<vector<Point>>contours, int contourIndex, Point2f *interestImage_point, String windowName, Size windowSize) {
     Mat window = Mat::zeros( windowSize, CV_8UC3 );
+    Mat windowContour = Mat::zeros( windowSize, CV_8UC3 );
+    Mat windowRect = Mat::zeros( windowSize, CV_8UC3 );
+
     Scalar color = Scalar( rng.uniform(0, 255), rng.uniform(0,255), rng.uniform(0,255) );
 
-    drawContours( window, contours, contourIndex, color, 1, 8, vector<Vec4i>(), 0, Point() );
+    drawContours( windowContour, contours, contourIndex, color, 1, 8, vector<Vec4i>(), 0, Point() );
 
     for( int j = 0; j < 4; j++ ) {
         //cout << interestImage_point[j] << endl;
-        line( window, interestImage_point[j], interestImage_point[(j+1)%4], color, 1, 8 );
+        line( windowRect, interestImage_point[j], interestImage_point[(j+1)%4], color, 1, 8 );
     }
 
     /// Show in a window
+    window = windowContour+windowRect;
     namedWindow( windowName, CV_WINDOW_AUTOSIZE );
     imshow( windowName, window );
     imwrite( LOCATION_SAVED+windowName+TYPE_SAVED, window );
+
+    imwrite( LOCATION_SAVED+windowName+"_contour"+TYPE_SAVED, windowContour );
+    imwrite( LOCATION_SAVED+windowName+"_contour_rect"+TYPE_SAVED, windowRect );
 }
 

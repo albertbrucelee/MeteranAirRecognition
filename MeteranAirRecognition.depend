@@ -10,7 +10,7 @@
 	"angkaExtraction.h"
 	"angkaRecognition.h"
 
-1516387354 /media/albertbrucelee/A0A84628A845FD72/Users/Albert Brucelee/Google Drive/Kuliah/Ekstensi/Semester 3/Pengantar Pengolahan Citra Digital/Project/MeteranAirRecognition/blokAngkaExtraction.h
+1516424138 /media/albertbrucelee/A0A84628A845FD72/Users/Albert Brucelee/Google Drive/Kuliah/Ekstensi/Semester 3/Pengantar Pengolahan Citra Digital/Project/MeteranAirRecognition/blokAngkaExtraction.h
 	<opencv2/core/core.hpp>
 	<opencv2/imgproc/imgproc.hpp>
 	<opencv2/highgui/highgui.hpp>
@@ -18,7 +18,7 @@
 	<stdio.h>
 	<stdlib.h>
 
-1516388442 /media/albertbrucelee/A0A84628A845FD72/Users/Albert Brucelee/Google Drive/Kuliah/Ekstensi/Semester 3/Pengantar Pengolahan Citra Digital/Project/MeteranAirRecognition/angkaExtraction.h
+1516417501 /media/albertbrucelee/A0A84628A845FD72/Users/Albert Brucelee/Google Drive/Kuliah/Ekstensi/Semester 3/Pengantar Pengolahan Citra Digital/Project/MeteranAirRecognition/angkaExtraction.h
 	<opencv2/core/core.hpp>
 	<opencv2/imgproc/imgproc.hpp>
 	<opencv2/highgui/highgui.hpp>
